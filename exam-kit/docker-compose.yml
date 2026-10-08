@@ -1,0 +1,27 @@
+name: shangzhi-exam
+
+services:
+  db:
+    image: ${EXAM_IMAGE_PREFIX:-shangzhi-exam}-db:${EXAM_TAG:-latest}
+    restart: unless-stopped
+    volumes:
+      - db-data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "127.0.0.1", "-uroot", "-proot"]
+      interval: 3s
+      timeout: 3s
+      retries: 40
+
+  api:
+    image: ${EXAM_IMAGE_PREFIX:-shangzhi-exam}-api:${EXAM_TAG:-latest}
+    restart: unless-stopped
+    environment:
+      DATABASE_URL: mysql://root:root@db:3306/nextjs_db
+    ports:
+      - "${API_PORT:-8080}:3000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  db-data:

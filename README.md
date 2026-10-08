@@ -49,6 +49,19 @@ npm run dev
 
 > 若 `3307` 也被佔用，修改 `.env` 的 `MYSQL_PORT` 並同步修改 `DATABASE_URL` 的 port。
 
+## 發放考試環境
+
+考生不拿原始碼，只拿 `exam-kit/` 資料夾與映像檔，在自己電腦上各跑一份後端（API 對外 port `8080`，已開放 CORS）。
+
+```bash
+scripts/build-exam-images.sh                    # 輸出 exam-kit/shangzhi-exam-images-{amd64,arm64}.tar
+scripts/build-exam-images.sh --push ghcr.io/org # 或推送到 registry（考生免載入 tar）
+```
+
+發給考生：`exam-kit/docker-compose.yml`、`exam-kit/README.md`，以及對應 CPU 架構的 `.tar`（或 registry 位址）。考生操作方式見 [`exam-kit/README.md`](./exam-kit/README.md)。
+
+> 修改 `swagger.md`、`sql/init.sql` 或任何程式碼後，都要重新執行腳本建置映像檔。
+
 ## 專案結構
 
 ```text
