@@ -11,14 +11,17 @@
 
 ## 練習考試
 
+題目電子檔：
+
 需求：[Docker Desktop](https://www.docker.com/products/docker-desktop/)
 
 **1. 只下載 `exam-kit` 資料夾**
 
 ```bash
-git clone --depth 1 --filter=blob:none --sparse https://github.com/Chen11111112/exam-1.git
+git clone --depth 1 --filter=blob:none --no-checkout https://github.com/Chen11111112/exam-1.git
 cd exam-1
-git sparse-checkout set exam-kit
+git sparse-checkout set --no-cone /exam-kit/
+git checkout
 cd exam-kit
 ```
 
