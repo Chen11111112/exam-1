@@ -1,7 +1,7 @@
 // GET /api/orders/:orderId
 import { connection } from 'next/server';
-import { respond } from '@/lib/api';
-import { orderIdSchema } from '@/lib/db/schemas';
+import { respond } from '@/util/respond';
+import { orderIdSchema } from '@/lib/schemas';
 import { getOrder } from '@/service/order';
 
 export async function GET(

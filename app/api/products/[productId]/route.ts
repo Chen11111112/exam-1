@@ -1,7 +1,7 @@
 // GET /api/products/:productId
 import { connection } from 'next/server';
-import { respond } from '@/lib/api';
-import { idSchema } from '@/lib/db/schemas';
+import { respond } from '@/util/respond';
+import { idSchema } from '@/lib/schemas';
 import { getProductById } from '@/service/product';
 
 export async function GET(

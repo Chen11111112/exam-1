@@ -1,6 +1,7 @@
 // POST /api/cart/items
-import { readJson, respond } from '@/lib/api';
-import { addCartItemSchema } from '@/lib/db/schemas';
+import { readJson } from '@/util/readJson';
+import { respond } from '@/util/respond';
+import { addCartItemSchema } from '@/lib/schemas';
 import { addCartItem } from '@/service/cart';
 
 export async function POST(request: Request) {

@@ -1,8 +1,8 @@
 // service/cart.ts — 購物車（不區分使用者，全站共用）
 import 'server-only';
 import type { ResultSetHeader, RowDataPacket } from 'mysql2';
-import { pool, withTransaction } from '@/lib/db/mysql';
-import { ApiError } from '@/lib/errors';
+import { pool, withTransaction } from '@/lib/mysql';
+import { ApiError } from '@/util/errors';
 import type { Cart, CartItem, CartLineOption, SelectedOption } from '@/lib/type';
 import { assertStock, priceItems, type Db } from '@/service/pricing';
 

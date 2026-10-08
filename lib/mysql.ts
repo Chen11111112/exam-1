@@ -1,7 +1,7 @@
 // lib/mysql.ts — DB connection layer
 import 'server-only';
 import mysql from 'mysql2/promise';
-import { env } from '@/lib/db/env';
+import { env } from '@/lib/env';
 
 const globalForDb = globalThis as unknown as {
   pool?: mysql.Pool;

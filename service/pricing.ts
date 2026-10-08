@@ -3,7 +3,7 @@ import 'server-only';
 import { createHash } from 'node:crypto';
 import type { RowDataPacket } from 'mysql2';
 import type { Pool, PoolConnection } from 'mysql2/promise';
-import { ApiError } from '@/lib/errors';
+import { ApiError } from '@/util/errors';
 import type { SelectedOption } from '@/lib/type';
 
 export type Db = Pool | PoolConnection;

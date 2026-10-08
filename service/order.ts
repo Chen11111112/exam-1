@@ -1,8 +1,8 @@
 // service/order.ts — 訂單
 import 'server-only';
 import type { ResultSetHeader, RowDataPacket } from 'mysql2';
-import { pool, withTransaction } from '@/lib/db/mysql';
-import { ApiError } from '@/lib/errors';
+import { pool, withTransaction } from '@/lib/mysql';
+import { ApiError } from '@/util/errors';
 import type {
   CreatedOrder,
   OrderDetail,

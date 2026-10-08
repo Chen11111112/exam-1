@@ -1,7 +1,8 @@
 // POST /api/coupons/validate
-import { readJson, respond } from '@/lib/api';
-import { pool } from '@/lib/db/mysql';
-import { validateCouponSchema } from '@/lib/db/schemas';
+import { readJson } from '@/util/readJson';
+import { respond } from '@/util/respond';
+import { pool } from '@/lib/mysql';
+import { validateCouponSchema } from '@/lib/schemas';
 import { evaluateCoupon } from '@/service/coupon';
 import { calcSubtotal, priceItems } from '@/service/pricing';
 

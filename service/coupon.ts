@@ -1,7 +1,7 @@
 // service/coupon.ts — 優惠券
 import 'server-only';
 import type { RowDataPacket } from 'mysql2';
-import { pool } from '@/lib/db/mysql';
+import { pool } from '@/lib/mysql';
 import type { Coupon, CouponValidation, DiscountType } from '@/lib/type';
 import type { Db } from '@/service/pricing';
 

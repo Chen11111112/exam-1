@@ -1,6 +1,7 @@
 // PATCH /api/cart/items/:itemId、DELETE /api/cart/items/:itemId
-import { readJson, respond } from '@/lib/api';
-import { idSchema, updateCartItemSchema } from '@/lib/db/schemas';
+import { readJson } from '@/util/readJson';
+import { respond } from '@/util/respond';
+import { idSchema, updateCartItemSchema } from '@/lib/schemas';
 import { removeCartItem, updateCartItem } from '@/service/cart';
 
 type Ctx = { params: Promise<{ itemId: string }> };

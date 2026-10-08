@@ -1,8 +1,8 @@
 // service/product.ts — 餐點詳細資料
 import 'server-only';
 import type { RowDataPacket } from 'mysql2';
-import { pool } from '@/lib/db/mysql';
-import { ApiError } from '@/lib/errors';
+import { pool } from '@/lib/mysql';
+import { ApiError } from '@/util/errors';
 import type { Product, ProductOption } from '@/lib/type';
 
 type ProductRow = RowDataPacket & {
