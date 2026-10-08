@@ -34,7 +34,7 @@ yarn-error.log*
 .env*
 !.env.example
 
-# exam image archives
+# exam image archives (upload to GitHub Releases)
 /exam-kit/*.tar
 
 # vercel

@@ -6,17 +6,16 @@
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/)（不需安裝 Node.js 或 MySQL）
 
-## 啟動
+## 開始考試
 
-若拿到的是映像檔壓縮檔（`shangzhi-exam-images-*.tar`），先載入一次：
-
+1. 先安裝並打開 Docker Desktop。
+2. 進入 exam-kit 資料夾。
+3. 載入映像檔（從 [Releases](https://github.com/Chen11111112/exam-1/releases) 下載並放進本資料夾）：
 ```bash
-docker load -i shangzhi-exam-images-amd64.tar   # Windows / Intel Mac
+docker load -i shangzhi-exam-images-amd64.tar   # Windows、Intel Mac
 docker load -i shangzhi-exam-images-arm64.tar   # Apple Silicon（M 系列）Mac
 ```
-
-在本資料夾執行：
-
+4. 啟動後端：
 ```bash
 docker compose up -d --wait
 ```
@@ -40,3 +39,14 @@ docker compose up -d --wait
 ```bash
 API_PORT=9090 docker compose up -d --wait
 ```
+## 說明
+所有 API 皆位於 `http://localhost:8080/api/...`（已開放 CORS），Request / Response 一律為 JSON（Content-Type: application/json）。
+
+成功：HTTP 200（POST /api/cart/items、POST /api/orders 為 201）
+
+失敗：HTTP status body 為 { "code": "...", "message": "..." }。
+
+本後端不做使用者身分 / 權限判斷，購物車與訂單為全站共用。
+
+## 後端範例
+https://115-exam.hychen.space

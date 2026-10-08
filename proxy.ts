@@ -1,3 +1,8 @@
+/**
+ * 開放跨來源存取。
+ * 考生的前端多半跑在 localhost:3000，跟 API 不同網址;
+ * 沒有這個設定，瀏覽器會擋掉所有 API 呼叫。
+ */
 import { NextResponse, type NextRequest } from 'next/server';
 
 const corsHeaders = {
